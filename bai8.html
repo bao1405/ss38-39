@@ -9,6 +9,11 @@
 <body>
     <div class="container">
         <h1>Weight Converter</h1>
+        <p>type a value in any of the fields to convert between weight measurements:</p>
+        <div class="input-group">
+            <label for="lb">Pounds:</label>
+            <input type="number" id="lb" oninput="convertWeight(this.value, 'lb')">
+        </div>
         
         <div class="input-group">
             <label for="kg">Kilograms :</label>
@@ -16,19 +21,15 @@
         </div>
 
         <div class="input-group">
+            <label for="oz">Ounces:</label>
+            <input type="number" id="oz" oninput="convertWeight(this.value, 'oz')">
+        </div>
+
+        <div class="input-group">
             <label for="g">Grams:</label>
             <input type="number" id="g" oninput="convertWeight(this.value, 'g')">
         </div>
 
-        <div class="input-group">
-            <label for="lb">Pounds:</label>
-            <input type="number" id="lb" oninput="convertWeight(this.value, 'lb')">
-        </div>
-
-        <div class="input-group">
-            <label for="oz">Ounces:</label>
-            <input type="number" id="oz" oninput="convertWeight(this.value, 'oz')">
-        </div>
         <div class="input-group">
             <label for="stones">Stones:</label>
             <input type="number" id="stones" oninput="convertWeight(this.value, 'stones')">

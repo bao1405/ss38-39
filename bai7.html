@@ -3,64 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="b7.css">
+    <script src="b7.js"></script>
 </head>
 <body>
-    <h1>Simple Calculator</h1>
-    
-    <table border="1" cellpadding="10" cellspacing="0">
-        <tr>
-            <td colspan="4"><input type="text" id="display" readonly></td>
-        </tr>
-        <tr>
-            <td><button onclick="appendToDisplay('1')">1</button></td>
-            <td><button onclick="appendToDisplay('2')">2</button></td>
-            <td><button onclick="appendToDisplay('3')">3</button></td>
-            <td><button onclick="appendToDisplay('+')">+</button></td>
-        </tr>
-        <tr>
-            <td><button onclick="appendToDisplay('4')">4</button></td>
-            <td><button onclick="appendToDisplay('5')">5</button></td>
-            <td><button onclick="appendToDisplay('6')">6</button></td>
-            <td><button onclick="appendToDisplay('-')">-</button></td>
-        </tr>
-        <tr>
-            <td><button onclick="appendToDisplay('7')">7</button></td>
-            <td><button onclick="appendToDisplay('8')">8</button></td>
-            <td><button onclick="appendToDisplay('9')">9</button></td>
-            <td><button onclick="appendToDisplay('*')">*</button></td>
-        </tr>
-        <tr>
-            <td><button onclick="clearDisplay()">AC</button></td>
-            <td colspan="2"><button onclick="calculate()">=</button></td>
-            <td><button onclick="appendToDisplay('/')">/</button></td>
-        </tr>
-    </table>
-
-    <script>
-        function appendToDisplay(value) {
-            let display = document.getElementById('display');
-            display.value += value;
-        }
-
-        function clearDisplay() {
-            let display = document.getElementById('display');
-            display.value = '';
-        }
-
-        function calculate() {
-            let display = document.getElementById('display');
-            try {
-                display.value = eval(display.value);
-            } catch (error) {
-                display.value = 'Error';
-            }
-        }
-
-        function backspace() {
-            let display = document.getElementById('display');
-            display.value = display.value.slice(0, -1);
-        }
-    </script>
+    <div class="container">
+        <h1>Password Generator</h1>
+        <input type="text" id="password" readonly><br>
+        <div class="options">
+            <label for="length">password Length:</label>
+            <input type="number" id="length" min="6" max="20" value="10"><br>
+            <label>Include uppercase letters<input type="checkbox" id="uppercase"></label><br>
+            <label>Include lowercase letters<input type="checkbox" id="lowercase"></label><br>
+            <label>Include numbers<input type="checkbox" id="numbers"></label><br>
+            <label>Include symbols<input type="checkbox" id="special"></label><br>
+        </div>
+        
+        <div class="result">
+            <button onclick="generatePassword()">Generate Password</button>
+        </div>
+    </div>
 </body>
 </html>

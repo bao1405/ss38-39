@@ -1,92 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination Example</title>
+    <link rel="stylesheet" href="b10.css">
+    <script src="b10.js"></script>
 </head>
 <body>
-  <div id="game">
-    <img class="card" src="image1.jpg" data-match="image1">
-    <img class="card" src="image2.jpg" data-match="image1">
-    <img class="card" src="image3.jpg" data-match="image2">
-    <img class="card" src="image4.jpg" data-match="image2">
-  </div>
-  <button id="restart">Restart</button>
-  <script>
-    const game = document.getElementById("game");
-const cards = document.getElementsByClassName("card");
-let firstCard, secondCard;
-let canClick = true;
-
-function flipCard() {
-  if (!canClick) return;
-  if (this === firstCard) return;
-
-  this.classList.add("flipped");
-
-  if (!firstCard) {
-    firstCard = this;
-    return;
-  }
-
-  secondCard = this;
-  canClick = false;
-
-  checkForMatch();
-}
-
-function checkForMatch() {
-  if (firstCard.dataset.match === secondCard.dataset.match) {
-    disableCards();
-    if (checkForWin()) {
-      setTimeout(() => {
-        alert("Congratulations!");
-      }, 500);
-    }
-  } else {
-    unflipCards();
-  }
-}
-
-function disableCards() {
-  firstCard.removeEventListener("click", flipCard);
-  secondCard.removeEventListener("click", flipCard);
-  firstCard = null;
-  secondCard = null;
-  canClick = true;
-}
-
-function unflipCards() {
-  setTimeout(() => {
-    firstCard.classList.remove("flipped");
-    secondCard.classList.remove("flipped");
-    firstCard = null;
-    secondCard = null;
-    canClick = true;
-  }, 1000);
-}
-
-function checkForWin() {
-  const flippedCards = document.getElementsByClassName("flipped");
-  return flippedCards.length === cards.length;
-}
-
-function restartGame() {
-  for (let i = 0; i < cards.length; i++) {
-    cards[i].classList.remove("flipped");
-    cards[i].addEventListener("click", flipCard);
-  }
-  firstCard = null;
-  secondCard = null;
-  canClick = true;
-}
-
-for (let i = 0; i < cards.length; i++) {
-  cards[i].addEventListener("click", flipCard);
-}
-
-document.getElementById("restart").addEventListener("click", restartGame);
-  </script>
+    <div class="container">
+        <label for="show">Show <input class="show" type="number" value="10">entries</label>
+        <label style="margin-left: 920px;" class="Seach" for="seach">Search:
+          <input type="text" id="searchInput">
+        </label>
+        <table id="employeeTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Office</th>
+                    <th>Age</th>
+                    <th>Start date</th>
+                    <th>Salory</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                  <tr>
+                    <td>Alferds Futterkiste</td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>Berglunds snabbkop</td>
+                    <td>Sweden</td>
+                </tr>
+                <tr>
+                    <td>Island Trading</td>
+                    <td>UK</td>
+                </tr>
+                <tr>
+                    <td>Konigiling Essen</td>
+                    <td>Germany</td>
+                </tr>
+                <tr>
+                    <td>laughing Bacchus Winecellars</td>
+                    <td>Canada</td>
+                </tr>
+                <tr>
+                    <td>Magazzini Alimentari Riuniti</td>
+                    <td>Italy</td>
+                </tr>
+                <tr>
+                    <td>North/South</td>
+                    <td>UK</td>
+                </tr>
+                <tr>
+                    <td>Paris specialites</td>
+                    <td>France</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pagination">
+            <button id="prevBtn" onclick="prevPage()">Previous</button>
+            <span id="pageIndicator">Page <span id="currentPage">1</span></span>
+            <button id="nextBtn" onclick="nextPage()">Next</button>
+        </div>
+    </div>
 </body>
 </html>

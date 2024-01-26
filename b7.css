@@ -1,36 +1,40 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background-color: blue;
 }
 
 .container {
-    background-color: #fff;
+    background-color: rgb(32, 5, 58);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1{
-    background-color: green;
     text-align: center;
+    color: white;
 }
 
-.input-group {
-    margin-bottom: 15px;
+.options {
+    margin-bottom: 20px;
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
+.result {
+    margin-top: 20px;
 }
 
-input {
-    width: 100%;
+input, button {
+    margin: 5px;
     padding: 8px;
-    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+}
+
+.options input{
+    width: 30px;
 }
