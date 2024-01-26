@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="game">
+    <img class="card" src="image1.jpg" data-match="image1">
+    <img class="card" src="image2.jpg" data-match="image1">
+    <img class="card" src="image3.jpg" data-match="image2">
+    <img class="card" src="image4.jpg" data-match="image2">
+  </div>
+  <button id="restart">Restart</button>
+  <script>
+    const game = document.getElementById("game");
+const cards = document.getElementsByClassName("card");
+let firstCard, secondCard;
+let canClick = true;
+
+function flipCard() {
+  if (!canClick) return;
+  if (this === firstCard) return;
+
+  this.classList.add("flipped");
+
+  if (!firstCard) {
+    firstCard = this;
+    return;
+  }
+
+  secondCard = this;
+  canClick = false;
+
+  checkForMatch();
+}
+
+function checkForMatch() {
+  if (firstCard.dataset.match === secondCard.dataset.match) {
+    disableCards();
+    if (checkForWin()) {
+      setTimeout(() => {
+        alert("Congratulations!");
+      }, 500);
+    }
+  } else {
+    unflipCards();
+  }
+}
+
+function disableCards() {
+  firstCard.removeEventListener("click", flipCard);
+  secondCard.removeEventListener("click", flipCard);
+  firstCard = null;
+  secondCard = null;
+  canClick = true;
+}
+
+function unflipCards() {
+  setTimeout(() => {
+    firstCard.classList.remove("flipped");
+    secondCard.classList.remove("flipped");
+    firstCard = null;
+    secondCard = null;
+    canClick = true;
+  }, 1000);
+}
+
+function checkForWin() {
+  const flippedCards = document.getElementsByClassName("flipped");
+  return flippedCards.length === cards.length;
+}
+
+function restartGame() {
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].classList.remove("flipped");
+    cards[i].addEventListener("click", flipCard);
+  }
+  firstCard = null;
+  secondCard = null;
+  canClick = true;
+}
+
+for (let i = 0; i < cards.length; i++) {
+  cards[i].addEventListener("click", flipCard);
+}
+
+document.getElementById("restart").addEventListener("click", restartGame);
+  </script>
+</body>
+</html>

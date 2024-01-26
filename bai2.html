@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        }
+
+        .tab-container {
+        display: inline-block;
+        overflow: hidden;
+        transition: height 0.5s ease;
+        }
+
+        .tab-bar {
+        display: flex;
+        justify-content: space-between;
+        height: 40px;
+        }
+
+        .tab {
+        border: none;
+        background: none;
+        cursor: pointer;
+        }
+
+  </style>
+  <title>Search Icon Animation</title>
+</head>
+<body>
+  <label class="search-container" id="searchContainer">
+    <div class="search-box" id="searchBox">
+      <input type="text" placeholder="Search...">
+      <button id="searchIcon">&#128269;</button>
+    </div>
+  </label>
+  <script>
+    let tabContainer = document.getElementById("tabContainer");
+    function showTab(tabName) {
+        if (tabName === "search") {
+            console.log("Show Search Tab");
+        } else if (tabName === "share") {
+            console.log("Show Share Tab");
+        }
+    toggleTabbar();
+    }
+
+    function toggleTabbar() {
+    let currentHeight = tabContainer.offsetHeight;
+        if (currentHeight === 0) {
+            tabContainer.style.height = "40px";
+        } else {
+            tabContainer.style.height = "0";
+        }
+    }
+
+  </script>
+</body>
+</html>

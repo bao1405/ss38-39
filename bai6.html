@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="b6.css">
+    <script src="b6.js" defer></script>
+    <title>Water Tracker</title>
+</head>
+<body>
+    <div class="water-container" id="mainCup">
+        <div class="water-level" id="mainCupLevel"></div>
+        <span id="remainingWater">2L</span>
+    </div>
+
+    <div class="small-cups-container" id="smallCups">
+        <!-- Eight small cups -->
+        <div class="small-cup" onclick="fillMainCup(1)">1.25</div>
+        <div class="small-cup" onclick="fillMainCup(2)">0.25</div>
+        <div class="small-cup" onclick="fillMainCup(3)">0.75</div>
+        <div class="small-cup" onclick="fillMainCup(4)">1</div>
+        <div class="small-cup" onclick="fillMainCup(5)">1.25</div>
+        <div class="small-cup" onclick="fillMainCup(6)">1.5</div>
+        <div class="small-cup" onclick="fillMainCup(7)">1.75</div>
+        <div class="small-cup" onclick="fillMainCup(8)">2</div>
+    </div>
+</body>
+</html>

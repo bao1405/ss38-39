@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="b8.css">
+    <title>Weight Converter</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Weight Converter</h1>
+        
+        <div class="input-group">
+            <label for="kg">Kilograms :</label>
+            <input type="number" id="kg" oninput="convertWeight(this.value, 'kg')">
+        </div>
+
+        <div class="input-group">
+            <label for="g">Grams:</label>
+            <input type="number" id="g" oninput="convertWeight(this.value, 'g')">
+        </div>
+
+        <div class="input-group">
+            <label for="lb">Pounds:</label>
+            <input type="number" id="lb" oninput="convertWeight(this.value, 'lb')">
+        </div>
+
+        <div class="input-group">
+            <label for="oz">Ounces:</label>
+            <input type="number" id="oz" oninput="convertWeight(this.value, 'oz')">
+        </div>
+        <div class="input-group">
+            <label for="stones">Stones:</label>
+            <input type="number" id="stones" oninput="convertWeight(this.value, 'stones')">
+        </div>
+    </div>
+
+    <script src="b8.js"></script>
+</body>
+</html>
