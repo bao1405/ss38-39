@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (found) {
                 rows[i].style.display = '';
-                // Di chuyển dòng lên đầu tiên
                 if (i > 1) {
                     const parent = rows[i].parentNode;
                     const previousSibling = rows[i].previousSibling;

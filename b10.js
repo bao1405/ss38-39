@@ -1,10 +1,6 @@
-const employees = [
-    { id: 1, name: 'John Doe', position: 'Developer' },
-    { id: 2, name: 'Jane Smith', position: 'Designer' },
-];
 
 const itemsPerPage = 10;
-let currentPage = 1;
+
 
 document.addEventListener('DOMContentLoaded', function () {
     displayData(employees.slice(0, itemsPerPage));
@@ -54,3 +50,27 @@ function nextPage() {
         displayData(employees.slice(startIdx, endIdx));
     }
 }
+
+let currentPage = 1;
+
+        function changePage(page) {
+            if (page < 1 || page > 6) return;
+            currentPage = page;
+            updatePageButtons();
+        }
+
+        function updatePageButtons() {
+            let buttons = document.getElementsByClassName('btn');
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].style.background = 'white'; 
+            }
+            for (let i = 0; i < currentPage; i++) {
+                buttons[i].style.background = 'blue'  ;
+                buttons[i].style.color = 'white'  ;
+            }
+            document.getElementsByClassName('btnprev')[0].disabled = currentPage === 1;
+
+            document.getElementsByClassName('btnnext')[0].disabled = currentPage === 6;
+        }
+
+        updatePageButtons();

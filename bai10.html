@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <label for="show">Show <input class="show" type="number" value="10">entries</label>
-        <label style="margin-left: 920px;" class="Seach" for="seach">Search:
+        <label style="margin-left: 850px;" class="Seach" for="seach">Search:
           <input type="text" id="searchInput">
         </label>
         <table id="employeeTable">
@@ -26,43 +26,83 @@
             </thead>
             <tbody id="tableBody">
                   <tr>
-                    <td>Alferds Futterkiste</td>
-                    <td>Germany</td>
+                    <td>Ari satou</td>
+                    <td>Accountant</td>
+                    <td>Tokyo</td>
+                    <td>33</td>
+                    <td>2008/11/28</td>
+                    <td>$162.700</td>
                 </tr>
                 <tr>
-                    <td>Berglunds snabbkop</td>
-                    <td>Sweden</td>
+                    <td>Angelice Ramos</td>
+                    <td>Chief Executive Officer (CEO)</td>
+                    <td>London</td>
+                    <td>47</td>
+                    <td>2009/10/09</td>
+                    <td>$1.200.000</td>
                 </tr>
                 <tr>
-                    <td>Island Trading</td>
-                    <td>UK</td>
+                    <td>Ashton Cox</td>
+                    <td>Jurier Technical Author</td>
+                    <td>San Francisco</td>
+                    <td>66</td>
+                    <td>2009/01/12</td>
+                    <td>$86.000</td>
                 </tr>
                 <tr>
-                    <td>Konigiling Essen</td>
-                    <td>Germany</td>
+                    <td>Bradey Greer</td>
+                    <td>Software Engineer</td>
+                    <td>London</td>
+                    <td>41</td>
+                    <td>2012/10/13</td>
+                    <td>$132.000</td>
                 </tr>
                 <tr>
-                    <td>laughing Bacchus Winecellars</td>
-                    <td>Canada</td>
+                    <td>Brielle Williamson</td>
+                    <td>Integration specialist</td>
+                    <td>San Francisco</td>
+                    <td>28</td>
+                    <td>2011/06/07</td>
+                    <td>$206.850</td>
                 </tr>
                 <tr>
-                    <td>Magazzini Alimentari Riuniti</td>
-                    <td>Italy</td>
+                    <td>Ari satou</td>
+                    <td>Accountant</td>
+                    <td>Tokyo</td>
+                    <td>33</td>
+                    <td>2008/11/28</td>
+                    <td>$162.700</td>
                 </tr>
                 <tr>
-                    <td>North/South</td>
-                    <td>UK</td>
+                    <td>Ari satou</td>
+                    <td>Accountant</td>
+                    <td>Tokyo</td>
+                    <td>33</td>
+                    <td>2008/11/28</td>
+                    <td>$162.700</td>
                 </tr>
                 <tr>
-                    <td>Paris specialites</td>
-                    <td>France</td>
+                    <td>Ari satou</td>
+                    <td>Accountant</td>
+                    <td>Tokyo</td>
+                    <td>33</td>
+                    <td>2008/11/28</td>
+                    <td>$162.700</td>
                 </tr>
             </tbody>
         </table>
         <div class="pagination">
-            <button id="prevBtn" onclick="prevPage()">Previous</button>
-            <span id="pageIndicator">Page <span id="currentPage">1</span></span>
-            <button id="nextBtn" onclick="nextPage()">Next</button>
+            <span>Showing 1 to 10 of 57 entries</span>
+            <button id="prevBtn" onclick="changePage(currentPage - 1)" style="margin-left: 730px;">Previous</button>
+            <span id="pageIndicator">
+                <button class="btn" onclick="changePage(1)" style="background-color: aqua;">1</button>
+                <button class="btn" onclick="changePage(2)">2</button>
+                <button class="btn" onclick="changePage(3)">3</button>
+                <button class="btn" onclick="changePage(4)">4</button>
+                <button class="btn" onclick="changePage(5)">5</button>
+                <button class="btn" onclick="changePage(6)">6</button>
+            </span>
+            <button id="nextBtn" onclick="changePage(currentPage + 1)">Next</button>
         </div>
     </div>
 </body>

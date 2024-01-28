@@ -48,3 +48,8 @@ button {
 .show{
     width: 30px;
 }
+
+.btn{
+    background-color: white;
+    border: white;
+}
